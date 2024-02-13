@@ -1,6 +1,3 @@
-#I can't remember what this code was about.
-#TODO: Figure it out
-
 import math
 pieces = 8
 scores = []
