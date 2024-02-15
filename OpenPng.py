@@ -22,6 +22,8 @@ class Image:
     FilterMethod = 0 # 1 byte
     InterlaceMethod = 0 # 1 byte, Value 0 = "no interlace" or 1 = "Adam7 interlace"
     
+    
+    
     def TurnBytes(self,FileName):
         Bytes = []
         with open(FileName, 'rb') as in_file:
@@ -90,6 +92,11 @@ class Image:
     def PLTE(self,Data):
         pass
     
+    def tRNS(self,Data):
+        #if self.ColorType == 3: #Contains one byte values that corresponds to palette
+            #0 = full transparency, 255 = no trasnparency
+        pass  
+    
     def cHRM(self,Data):
         pass
     
@@ -103,6 +110,7 @@ class Image:
         pass
     
     def IEND(self):
+        print("Processing image done!");
         pass
     
     def BytesToDecimal(self,Bytes):
@@ -112,7 +120,7 @@ class Image:
         return Lenght
     
     def Setup(self):
-        H = self.TurnBytes("Excel.png")
+        H = self.TurnBytes("ShotgunShell.png")
         print(H)
         A = self.CheckFileSignature(H)
         print(A)
